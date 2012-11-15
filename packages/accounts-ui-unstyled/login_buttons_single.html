@@ -12,11 +12,25 @@
   </div>
 </template>
 
+<template name="_loginButtonsLoggingInSingleLoginButton">
+  <div class="login-text-and-button">
+    {{! invisible div used for correct height of surrounding div. this ensures
+        that the _loginButtons template is always the same height
+        and the rest of the page doesn't move up and down }}
+    <div class="login-button single-login-button" style="visibility: hidden;" id="login-buttons-logout">&nbsp;</div>
+
+    {{> _loginButtonsLoggingIn}}
+
+    {{! used again for padding on boths sides }}
+    <div class="login-button single-login-button" style="visibility: hidden;" id="login-buttons-logout">&nbsp;</div>
+  </div>
+</template>
+
 <template name="_loginButtonsLoggedInSingleLogoutButton">
   <div class="login-text-and-button">
     <div class="login-display-name">
       {{displayName}}
-    </div>
     <div class="login-button single-login-button" id="login-buttons-logout">Sign Out</div>
   </div>
 </template>
+
