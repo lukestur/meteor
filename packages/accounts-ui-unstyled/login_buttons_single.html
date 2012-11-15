@@ -15,7 +15,11 @@
 <template name="_loginButtonsLoggedInSingleLogoutButton">
   <div class="login-text-and-button">
     <div class="login-display-name">
-      {{displayName}}
+      {{#if loggingIn}}
+        {{> _loginButtonsLoggingIn}}
+      {{else}}
+        {{displayName}}
+      {{/if}}
     </div>
     <div class="login-button single-login-button" id="login-buttons-logout">Sign Out</div>
   </div>
