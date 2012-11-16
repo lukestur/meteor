@@ -71,5 +71,20 @@
 </template>
 
 <template name="_loginButtonsLoggingIn">
+  {{> _loginButtonsLoggingInPadding}}
   <div class="loading">&nbsp;</div>
+  {{> _loginButtonsLoggingInPadding}}
+</template>
+
+<template name="_loginButtonsLoggingInPadding">
+  {{#unless dropdown}}
+    {{! invisible div used for correct height of surrounding div. this ensures
+        that the _loginButtons template is always the same height
+        and the rest of the page doesn't move up and down }}
+  {{! xcxc width should be narrower, we add some magic constant because of padding and margin}}
+    <div class="login-button single-login-button" style="visibility: hidden; width: 30px;" id="login-buttons-logout">&nbsp;</div>
+  {{else}}
+    {{! just add some padding }}
+    <div style="display: inline-block; width: 30px; height: 1px; xcxc" />
+  {{/unless}}
 </template>
